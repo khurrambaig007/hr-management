@@ -3,13 +3,14 @@
 [![Latest Version](https://img.shields.io/packagist/v/khurrambaig/hr-management.svg)](https://packagist.org/packages/khurrambaig/hr-management)
 [![Total Downloads](https://img.shields.io/packagist/dt/khurrambaig/hr-management.svg)](https://packagist.org/packages/khurrambaig/hr-management)
 [![License](https://img.shields.io/packagist/l/khurrambaig/hr-management.svg)](https://github.com/khurrambaig007/hr-management/blob/dev-main/LICENSE)
+[![Tests](https://github.com/khurrambaig007/hr-management/actions/workflows/tests.yml/badge.svg)](https://github.com/khurrambaig007/hr-management/actions/workflows/tests.yml)
 
-HR management package for Laravel 11+: departments, employees, attendance, leaves and annual leave settlements.
+HR management package for Laravel 11, 12 and 13: departments, employees, attendance, leaves and annual leave settlements.
 
 ## Requirements
 
 - PHP `^8.2`
-- Laravel `^11.0`
+- Laravel `11.x`, `12.x` or `13.x` (Laravel 13 requires PHP 8.3+)
 - A `users` table (Laravel Breeze or equivalent auth is assumed)
 
 ## Installation

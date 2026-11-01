@@ -5,6 +5,15 @@ All notable changes to `khurrambaig/hr-management` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-11-01
+
+### Added
+
+- Laravel 12.x and 13.x support (Laravel 13 requires PHP 8.3+).
+- CI matrix covering Laravel 11, 12 and 13.
+
+No source code changes; the constraints were widened after the full test suite passed on every supported major.
+
 ## [1.0.0] - 2026-11-01
 
 ### Added
