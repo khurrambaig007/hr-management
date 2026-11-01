@@ -96,6 +96,42 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Roles source
+    |--------------------------------------------------------------------------
+    |
+    | Where HR roles are read from:
+    |
+    | - "employee": the employees.role column (default, no extra packages)
+    | - "spatie":   spatie/laravel-permission roles assigned to the user model
+    |
+    | With "spatie", employees.role is still kept in sync for sorting and
+    | filtering, and rows whose user has no mapped Spatie role yet fall back
+    | to the column. Run "php artisan hr:sync-roles" after switching.
+    |
+    */
+
+    'roles_source' => env('HR_ROLES_SOURCE', 'employee'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Spatie role mapping
+    |--------------------------------------------------------------------------
+    |
+    | Maps each HR role to the Spatie role name. Only used when the roles
+    | source above is "spatie". Mapped roles are managed by this package.
+    |
+    */
+
+    'spatie' => [
+        'role_map' => [
+            'employee' => 'employee',
+            'manager' => 'manager',
+            'admin' => 'admin',
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Leave types
     |--------------------------------------------------------------------------
     |

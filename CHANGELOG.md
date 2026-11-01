@@ -5,6 +5,15 @@ All notable changes to `khurrambaig/hr-management` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-11-01
+
+### Added
+
+- Optional `spatie/laravel-permission` integration via `roles_source => 'spatie'`.
+- Configurable Spatie role map and automatic role sync when employees are created or updated.
+- `hr:sync-roles` command to mirror existing `employees.role` values to Spatie roles.
+- Role filtering and last-admin protection respect the configured role source.
+
 ## [1.1.0] - 2026-11-01
 
 ### Added

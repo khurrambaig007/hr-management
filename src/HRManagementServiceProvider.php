@@ -5,6 +5,7 @@ namespace Khurrambaig\HRManagement;
 use Illuminate\Support\ServiceProvider;
 use Khurrambaig\HRManagement\Console\Commands\CheckPermanency;
 use Khurrambaig\HRManagement\Console\Commands\GrantAnniversaryQuota;
+use Khurrambaig\HRManagement\Console\Commands\SyncSpatieRoles;
 use Khurrambaig\HRManagement\Http\Middleware\EnsureHRRole;
 use Khurrambaig\HRManagement\Services\AccrualService;
 use Khurrambaig\HRManagement\Services\AttendanceCorrectionService;
@@ -54,6 +55,7 @@ class HRManagementServiceProvider extends ServiceProvider
             $this->commands([
                 CheckPermanency::class,
                 GrantAnniversaryQuota::class,
+                SyncSpatieRoles::class,
             ]);
         }
 

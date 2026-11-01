@@ -22,9 +22,9 @@ class EmployeeController extends BaseController
         $this->requireAdmin();
 
         $employees = Employee::query()
-            ->with(['user', 'department'])
+            ->with(Employee::spatieEnabled() ? ['user', 'user.roles', 'department'] : ['user', 'department'])
             ->when(request('department_id'), fn ($query, $departmentId) => $query->where('department_id', $departmentId))
-            ->when(request('role'), fn ($query, $role) => $query->where('role', $role))
+            ->when(request('role'), fn ($query, $role) => $query->whereHrRole($role))
             ->orderByDesc('id')
             ->paginate(15)
             ->withQueryString();
@@ -75,7 +75,7 @@ class EmployeeController extends BaseController
     {
         $this->requireAdmin();
 
-        $employee->load(['user', 'department']);
+        $employee->load(Employee::spatieEnabled() ? ['user', 'user.roles', 'department'] : ['user', 'department']);
 
         $attendanceCount = $employee->attendances()->whereYear('date', now()->year)->count();
         $leaveStats = $employee->leaves()

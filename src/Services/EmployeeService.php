@@ -21,6 +21,8 @@ class EmployeeService
 
         $employee = Employee::create(array_merge($data, ['user_id' => $userId]));
 
+        Employee::syncSpatieRole($employee, $employee->role);
+
         $this->accrual->syncQuota($employee);
 
         return $employee;
@@ -33,6 +35,8 @@ class EmployeeService
         }
 
         $employee->update($data);
+
+        Employee::syncSpatieRole($employee, $employee->role);
 
         $this->accrual->syncQuota($employee);
 
@@ -51,7 +55,7 @@ class EmployeeService
         }
 
         if ($employee->isAdmin()) {
-            $adminCount = Employee::where('role', Employee::ROLE_ADMIN)->count();
+            $adminCount = Employee::whereHrRole(Employee::ROLE_ADMIN)->count();
 
             if ($adminCount <= 1) {
                 throw ValidationException::withMessages([

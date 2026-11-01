@@ -66,7 +66,7 @@
                     <label>Role</label>
                     <select name="role" required>
                         @foreach(config('hr-management.roles') as $key => $value)
-                            <option value="{{ $value }}" @selected(old('role', $employee->role) === $value)>{{ ucfirst($value) }}</option>
+                            <option value="{{ $value }}" @selected(old('role', $employee->roleName()) === $value)>{{ ucfirst($value) }}</option>
                         @endforeach
                     </select>
                 </div>

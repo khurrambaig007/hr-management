@@ -85,6 +85,49 @@ Schedule::command('hr:check-permanency')->daily();
 | `manager` | employee rights + approve/reject leaves + attendance reports |
 | `admin` | manager rights + employee CRUD + manual attendance + settlements CRUD |
 
+## Spatie permissions (optional)
+
+Out of the box the package stores its role in `employees.role` and needs no extra packages. If your app already uses [spatie/laravel-permission](https://github.com/spatie/laravel-permission), you can make Spatie the source of truth:
+
+```bash
+composer require spatie/laravel-permission
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
+```
+
+Add `Spatie\Permission\Traits\HasRoles` to your `User` model, then enable the driver:
+
+```dotenv
+HR_ROLES_SOURCE=spatie
+```
+
+Roles are matched by name (`admin`, `manager`, `employee`). To use different Spatie names, adjust `spatie.role_map` in `config/hr-management.php`:
+
+```php
+'spatie' => [
+    'role_map' => [
+        'employee' => 'staff',
+        'manager'  => 'team-lead',
+        'admin'    => 'hr-admin',
+    ],
+],
+```
+
+Mirror existing employees once after switching:
+
+```bash
+php artisan hr:sync-roles
+php artisan hr:sync-roles --user=42
+```
+
+Behaviour when `roles_source` is `spatie`:
+
+- Authorization reads the user's Spatie roles, with `admin` > `manager` > `employee` precedence.
+- Saving an employee assigns the mapped Spatie role and keeps `employees.role` in sync for filtering and sorting.
+- Only the mapped roles are managed by the package; any other roles on the user are left untouched.
+- Users without a mapped Spatie role yet fall back to `employees.role`, so existing data keeps working before the sync.
+- If `spatie/laravel-permission` is not installed, the package falls back to the column automatically.
+
 ## Business rules (current version)
 
 - Leave year = employee's hire-anniversary 12-month window.
