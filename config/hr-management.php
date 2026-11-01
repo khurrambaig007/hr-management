@@ -101,7 +101,8 @@ return [
     |
     | Where HR roles are read from:
     |
-    | - "employee": the employees.role column (default, no extra packages)
+    | - "employee": the employees.role column (default, works with or without
+    |               publishing the Spatie migrations)
     | - "spatie":   spatie/laravel-permission roles assigned to the user model
     |
     | With "spatie", employees.role is still kept in sync for sorting and

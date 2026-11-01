@@ -5,6 +5,14 @@ All notable changes to `khurrambaig/hr-management` are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-11-01
+
+### Changed
+
+- `spatie/laravel-permission` is now a required dependency (`^6.0|^7.0|^8.0`) instead of an optional development dependency.
+
+Authorization still defaults to `employees.role`; set `HR_ROLES_SOURCE=spatie` to use Spatie roles.
+
 ## [1.2.0] - 2026-11-01
 
 ### Added

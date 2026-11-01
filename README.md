@@ -85,12 +85,11 @@ Schedule::command('hr:check-permanency')->daily();
 | `manager` | employee rights + approve/reject leaves + attendance reports |
 | `admin` | manager rights + employee CRUD + manual attendance + settlements CRUD |
 
-## Spatie permissions (optional)
+## Spatie permissions
 
-Out of the box the package stores its role in `employees.role` and needs no extra packages. If your app already uses [spatie/laravel-permission](https://github.com/spatie/laravel-permission), you can make Spatie the source of truth:
+The package requires [spatie/laravel-permission](https://github.com/spatie/laravel-permission) (it is installed automatically), so both role systems are always available. By default authorization still uses `employees.role`, which keeps the package working without any Spatie setup. To make Spatie the source of truth:
 
 ```bash
-composer require spatie/laravel-permission
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 php artisan migrate
 ```

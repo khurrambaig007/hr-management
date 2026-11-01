@@ -22,15 +22,12 @@
         "illuminate/routing": "^11.0|^12.0|^13.0",
         "illuminate/console": "^11.0|^12.0|^13.0",
         "illuminate/http": "^11.0|^12.0|^13.0",
-        "illuminate/view": "^11.0|^12.0|^13.0"
+        "illuminate/view": "^11.0|^12.0|^13.0",
+        "spatie/laravel-permission": "^6.0|^7.0|^8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^9.0|^10.0|^11.0",
-        "phpunit/phpunit": "^10.5|^11.5|^12.5",
-        "spatie/laravel-permission": "^6.0|^8.0"
-    },
-    "suggest": {
-        "spatie/laravel-permission": "Required only when hr-management.roles_source is set to \"spatie\"."
+        "phpunit/phpunit": "^10.5|^11.5|^12.5"
     },
     "autoload": {
         "psr-4": {
