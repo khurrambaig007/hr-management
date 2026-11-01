@@ -1,5 +1,9 @@
 # hr-management
 
+[![Latest Version](https://img.shields.io/packagist/v/khurrambaig/hr-management.svg)](https://packagist.org/packages/khurrambaig/hr-management)
+[![Total Downloads](https://img.shields.io/packagist/dt/khurrambaig/hr-management.svg)](https://packagist.org/packages/khurrambaig/hr-management)
+[![License](https://img.shields.io/packagist/l/khurrambaig/hr-management.svg)](https://github.com/khurrambaig007/hr-management/blob/dev-main/LICENSE)
+
 HR management package for Laravel 11+: departments, employees, attendance, leaves and annual leave settlements.
 
 ## Requirements
@@ -11,7 +15,13 @@ HR management package for Laravel 11+: departments, employees, attendance, leave
 ## Installation
 
 ```bash
-composer require khurrambaig/hr-management:@dev
+composer require khurrambaig/hr-management
+```
+
+To use the latest unreleased code instead of a stable tag:
+
+```bash
+composer require khurrambaig/hr-management:dev-main
 ```
 
 ### Publish & migrate

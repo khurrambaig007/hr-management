@@ -2,8 +2,19 @@
     "name": "khurrambaig/hr-management",
     "description": "HR management package: departments, employees, attendance, leaves and annual leave settlements for Laravel 11+.",
     "keywords": ["laravel", "hr", "management", "attendance", "leaves", "settlements", "human-resources"],
+    "homepage": "https://github.com/khurrambaig007/hr-management",
     "license": "MIT",
     "type": "library",
+    "authors": [
+        {
+            "name": "Mirza Khurram Baig",
+            "email": "khurram0072005@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/khurrambaig007/hr-management/issues",
+        "source": "https://github.com/khurrambaig007/hr-management"
+    },
     "require": {
         "php": "^8.2",
         "illuminate/support": "^11.0",
@@ -39,7 +50,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
