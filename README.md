@@ -21,7 +21,7 @@ composer require khurrambaig/hr-management
 To use the latest unreleased code instead of a stable tag:
 
 ```bash
-composer require khurrambaig/hr-management:dev-main
+composer require khurrambaig/hr-management:@dev
 ```
 
 ### Publish & migrate
